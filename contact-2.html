@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<?php
+//==============
+//CONFIGURATION
+//==============
+
+//IMPORTANT!!
+//Put in your email address below:
+$to = 'atixscripts@gmail.com';
+
+
+//User info (DO NOT EDIT!)
+$name = stripslashes($_POST['username']); //sender's name
+$email = stripslashes($_POST['email']); //sender's email
+
+//The subject
+$subject = stripslashes($_POST['subject']); // the subject
+$message = stripslashes($_POST['message']); //sender's email
+
+//The message you will receive in your mailbox
+//Each parts are commented to help you understand what it does exaclty.
+//YOU DON'T NEED TO EDIT IT BELOW BUT IF YOU DO, DO IT WITH CAUTION!
+$msg  = "From : $name \r\n";  //add sender's name to the message
+$msg .= "e-Mail : $email \r\n";  //add sender's email to the message
+$msg .= "Subject : $subject \r\n\r\n"; //add subject to the message (optional! It will be displayed in the header anyway)
+$msg .= "---Message--- \r\n".stripslashes($_POST['message'])."\r\n\r\n";  //the message itself
+
+//Extras: User info (Optional!)
+//Delete this part if you don't need it
+//Display user information such as Ip address and browsers information...
+$msg .= "---User information--- \r\n"; //Title
+$msg .= "User IP : ".$_SERVER["REMOTE_ADDR"]."\r\n"; //Sender's IP
+$msg .= "Browser info : ".$_SERVER["HTTP_USER_AGENT"]."\r\n"; //User agent
+$msg .= "User come from : ".$_SERVER["HTTP_REFERER"]; //Referrer
+// END Extras
+?>
+<head>
+	<meta charset="utf-8">
+	<title>Extensio - Business / Corporate HTML5 Template</title>
+	<meta name="description" content="Premium HTML5 Template" />
+	<meta name="keywords" content="html5, css, xml, slider, blog, portfolio, business, corporate" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+	<link media="all" rel="stylesheet" type="text/css" href="css/green-style.css">
+	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/tinynav.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$('#main-menu').tinyNav({
+        header: 'Navigation'
+      });
+		});
+	</script>
+	<!-- contact form -->
+	<link rel="stylesheet" href="js/contact/form.css" type="text/css"/>	
+	<script src="js/contact/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/contact/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#cont_form").validationEngine();
+		});
+	</script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css"><![endif]-->
+</head>
+<body>
+	<!-- header -->
+	<header id="header" class="container">
+		<!-- logo -->
+		<h1 class="logo"><a href="index.html">Extensio - Business / Corporate HTML5 Template</a></h1>
+		<!-- main nav -->
+		<nav id="nav">
+			<ul id="main-menu">
+				<li><a href="index.html">Home</a>
+					<ul>
+						<li><a href="homepage-2.html">Home Layout 2</a></li>
+						<li><a href="homepage-3.html">Home Layout 3</a></li>
+						<li><a href="homepage-4.html">Home Layout 4</a></li>
+						<li><a href="homepage-5.html">Home Layout 5</a></li>
+						<li><a href="homepage-6.html">Home Layout 6</a></li>	
+						<li><a href="homepage-7.html">Home Layout 7</a></li>	
+						<li><a href="homepage-8.html">Home Layout 8</a></li>										
+					</ul>								
+				</li>
+				<li><a href="#">Sliders</a>
+					<ul>
+						<li><a href="slider-nivo.html">Nivo Slider</a></li>
+						<li><a href="slider-accordion.html">Accordion Slider</a></li>
+						<li><a href="slider-carouFredSel.html">CarouFredSel Slider</a></li>
+						<li><a href="slider-piecemaker.html">Piecemaker Slider</a></li>										
+					</ul>	
+				</li>
+				<li><a href="#">Features</a>
+					<ul>
+						<li><a href="typography.html">Typography</a></li>
+						<li><a href="#">Elements</a>
+							<ul>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="infoboxes.html">Info Boxes</a></li>
+								<li><a href="columns.html">Columns</a></li>
+								<li><a href="tabs.html">Tabs & Toggle</a></li>
+								<li><a href="pricing-tables.html">Pricing Tables</a></li>
+								<li><a href="media.html">Media</a></li>											
+							</ul>
+						</li>	
+						<li><a href="#">Layouts</a>
+							<ul>
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="services.html">Services</a></li>
+								<li><a href="tour.html">Site Tour</a></li>
+								<li><a href="faq.html">FAQ</a></li>
+								<li><a href="sitemap.html">Sitemap</a></li>
+								<li><a href="404.html">404 Error Page</a></li>											
+								<li><a href="page-right-sidebar.html">Right Sidebar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="portfolio-sortable.html">Portfolio</a>
+					<ul>
+						<li><a href="portfolio-one-column.html">One Column Portfolio</a></li>
+						<li><a href="portfolio-two-columns.html">Two Columns Portfolio</a></li>
+						<li><a href="portfolio-three-columns.html">Three Columns Portfolio</a></li>
+						<li><a href="portfolio-four-columns.html">Four Columns Portfolio</a></li>
+						<li><a href="portfolio-sortable.html">Sortable Portfolio</a></li>
+					</ul>							
+				</li>
+				<li><a href="blog-layout-1.html">Blog</a>
+					<ul>
+						<li><a href="blog-layout-1.html">Blog Layout 1</a></li>
+						<li><a href="blog-layout-2.html">Blog Layout 2</a></li>
+						<li><a href="blog-layout-3.html">Blog Layout 3</a></li>
+						<li><a href="blog-layout-4.html">Blog Layout 4</a></li>
+						<li><a href="blog-single-post.html">Blog Single Post</a></li>
+					</ul>
+				</li>
+				<li><a href="contact-1.html">Contact</a>
+					<ul>
+						<li><a href="contact-1.html">Contact Layout 1</a></li>
+						<li><a href="contact-2.html">Contact Layout 2</a></li>
+					</ul>							
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- main -->
+	<div id="main">
+		<section class="intro gallery">
+			<div class="container">
+				<iframe width="100%" height="475" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=New+York,+NY,+United+States&amp;sll=37.0625,-95.677068&amp;sspn=30.323858,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=New+York&amp;t=m&amp;ll=40.715973,-74.011374&amp;spn=0.098211,0.222988&amp;z=13&amp;output=embed" style="margin:0 0 0 0; padding:0; border:0px;"></iframe>
+			</div>
+		</section>
+		<!-- switcher -->					
+		<div class="container main-holder">
+			<div class="row">
+				<!-- content -->
+				<section class="span9 col" id="content">
+					<!-- article -->
+					<article class="article-alt">
+						<div class="txt">
+							<div class="headline solid">
+								<h2>Let's get together and talk</h2>
+							</div>									
+							<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit ...</p>
+							<p>&nbsp;</p>
+						</div>
+					</article>
+					
+					<?php
+						if ($_SERVER['REQUEST_METHOD'] != 'POST'){
+							$self = $_SERVER['PHP_SELF'];
+					?>
+					<!-- contact-form -->
+					<form method="post" class="comments-form" id="cont_form" action="#">
+						<fieldset>
+							<div class="headline">
+								<h2>Send us a message</h2>
+							</div>
+							<div class="row">
+								<label for="name">Your Name <span>(*)</span></label>
+								<input type="text" id="username" name="username" value="" class="text validate[required]" >
+							</div>
+							<div class="row">
+								<label for="email">Your Email <span>(*)</span></label>
+								<input type="text" id="email" name="email" value="" class="text validate[required,custom[email]]" >
+							</div>
+							<div class="row">
+								<label for="subject">Your Subject</label>
+								<input type="text" id="subject" name="subject" value="" class="text" >
+							</div>									
+							<div class="row">
+								<label for="message">Your Message <span>(*)</span></label>
+								<textarea class="w_focus validate[required]" id="message" name="message" cols="30" rows="10"></textarea>
+							</div>
+							<span class="submit">Send Email<input type="submit" value="Send Email" ></span>
+						</fieldset>
+					</form>
+					<?php
+						} else {
+							error_reporting(0);
+					
+							if  (mail($to, $subject, $msg, "From: $email\r\nReply-To: $email\r\nReturn-Path: $email\r\n"))
+					
+							//Message sent!
+							//It the message that will be displayed when the user click the sumbit button
+							//You can modify the text if you want
+							echo nl2br("
+							<span class='MsgSent'>
+								<h1>Congratulations!</h1>
+								Thank you ".$name.", your message is sent!<br /> I will get back to you as soon as possible.
+							</span>
+							 ");
+					
+							else
+					
+							// Display error message if the message failed to send
+							echo "
+							<span class='MsgError'>
+								<h1>Error!</h1>
+								Sorry ".$name.", your message failed to send. Try later!
+							</span>";
+						}
+					?>
+					
+				</section>
+				<!-- sidebar -->
+				<aside class="span3 col" id="sidebar">
+					<section class="box">
+						<h3>Little about us</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis iaculis urna ut mollis. Praesent est elit, commodo in blandit ut, mollis eu erat. Nullam ac ipsum eget ante suscipit sagittis.</p>
+					</section>
+					<section class="box">
+						<h3>Contact Information</h3>
+						<p>    
+							<dl>
+								<dt>Phone: +1 800 603 6035</dt>
+								<dt>Fax: +1 800 889 9898</dt>
+								<dt>E-mail: <a href="mailto:mail@sitename.com">mail@sitename.com</a></dt>
+								<dt>Website: <a href="#">http://sitename.com</a></dt>
+								
+							</dl>
+							<address>Address: 9870St Vincent Place, <br >Glasgow, DC 45 Fr 45.</address>
+						</p>
+					</section>
+				</aside>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footer-holder">
+			<div class="container">
+				<div class="row">
+					<!-- contact -->
+					<div class="contact span3">
+						<section class="contact-holder">
+
+								<h4>Get in Touch</h4>
+							<dl>
+								<dt>Telephone:</dt>
+								<dd>+1 800 603 6035</dd>
+								<dt>Fax:</dt>
+								<dd>+1 800 889 9898</dd>
+								<dt>E-mail:</dt>
+								<dd><a href="mailto:contact@sitename.com">contact@sitename.com</a></dd>
+							</dl>
+							<address>9870St Vincent Place, <br >Glasgow, DC 45 Fr 45.</address>
+
+							</section>
+						<!-- newsletter -->
+						<section class="newsletter">
+							<h4>Sign Up for Our Newsletter</h4>
+
+								<form action="#">
+								<fieldset>
+									<input type="text" value="Email address ..." class="text" >
+									<input type="submit" value="submit" class="submit" >
+								</fieldset>
+							</form>
+
+							</section>
+					</div>
+					<!-- social-networks -->
+					<nav class="social-networks2 span3">
+						<h4>Social Media</h4>
+						<ul>
+							<li><a href="#">Like us on Facebook</a></li>
+							<li><a class="twitter" href="#">Follow us on Twitter</a></li>
+							<li><a class="dribbble" href="#">Dribbble Shots</a></li>
+							<li><a class="youtube" href="#">Youtube Channel</a></li>
+							<li><a class="google" href="#">Google+ Page</a></li>
+							<li><a class="linkedin" href="#">Follow us on LinkedIn</a></li>
+						</ul>
+					</nav>
+					<!-- clients-info -->
+					<nav class="clients-info span3">
+						<h4>For Our Clients</h4>
+						<ul>
+							<li><a href="#">Frequently Asked Questions</a></li>
+							<li><a href="#">Service Updates</a></li>
+							<li><a href="#">Community Forum</a></li>
+							<li><a href="#">Help Desk</a></li>
+							<li><a href="#">Validate License</a></li>
+						</ul>
+					</nav>
+					<!-- flickr -->
+					<section class="flickr span3">
+						<h4>Flickr Stream</h4>
+						<script flickr_type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;flickr_display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=24878717@N06"></script>
+					</section>
+				</div>
+			</div>
+		</div>
+		<!-- add -->
+		<div class="add">
+			<div class="container">
+				<strong class="copyright">&copy; Copyright 2012 Extensio Template Demo. All rights reserved.</strong>
+				<nav class="add-nav">
+					<ul>
+						<li><a href="#">Sitemap</a></li>
+						<li><a href="#">Terms of use</a></li>
+						<li><a href="#">Privacy policy</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
